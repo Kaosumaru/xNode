@@ -142,7 +142,7 @@ namespace XNodeEditor {
             //Get All fields from node type and we go filter only field with portAttribute.
             //This way is possible to know the values of the all ports and if have some with compatible value tue
             foreach (FieldInfo f in XNode.NodeDataCache.GetNodeFields(nodeType)) {
-                var portAttribute = f.GetCustomAttributes(findType, false).FirstOrDefault();
+                var portAttribute = f.GetCustomAttributes(findType, true).FirstOrDefault();
                 if (portAttribute != null) {
                     if (IsCastableTo(f.FieldType, compatibleType)) {
                         return true;
