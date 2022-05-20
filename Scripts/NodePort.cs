@@ -67,7 +67,7 @@ namespace XNode {
             _fieldName = fieldInfo.Name;
             ValueType = fieldInfo.FieldType;
             _dynamic = false;
-            var attribs = fieldInfo.GetCustomAttributes(false);
+            var attribs = fieldInfo.GetCustomAttributes(true);
             for (int i = 0; i < attribs.Length; i++) {
                 if (attribs[i] is Node.InputAttribute) {
                     _direction = IO.Input;
