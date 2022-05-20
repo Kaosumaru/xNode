@@ -22,7 +22,7 @@ namespace XNodeEditor {
         private static Dictionary<Type, Dictionary<string, List<PropertyAttribute>>> typeOrderedPropertyAttributes = new Dictionary<Type, Dictionary<string, List<PropertyAttribute>>>();
 
         public static bool GetAttrib<T>(Type classType, out T attribOut) where T : Attribute {
-            object[] attribs = classType.GetCustomAttributes(typeof(T), false);
+            object[] attribs = classType.GetCustomAttributes(typeof(T), true);
             return GetAttrib(attribs, out attribOut);
         }
 
